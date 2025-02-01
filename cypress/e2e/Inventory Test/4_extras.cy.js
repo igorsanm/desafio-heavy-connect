@@ -1,7 +1,7 @@
 import { users, url } from "./Mock";
-import { doSignIn, selectItem, seeItemDetails, addToCart, backToProducts, continueShopping, goToCart, 
+import { doSignIn, selectItem, seeItemDetails, addToCart, backToProducts, goToCart, 
          checkItemInTheCart, fillCheckoutForm, removeItem, checkItemRemovedFromCart,
-         goToCheckout, cancelCheckout, finishCheckout, continueCheckout, checkErrorMessage, fillFieldCheckout} from "./Utils";
+         goToCheckout, cancelCheckout} from "./Utils";
 
 describe("Inventory - Extras", () => {
   beforeEach(() => {
@@ -48,6 +48,7 @@ describe("Inventory - Extras", () => {
     cancelCheckout();
     
   });
+
   it("Should add items to the cart directly from the products page", () => {
     const item1 = 'Sauce Labs Bike Light';
     const item2 = 'Sauce Labs Onesie';
@@ -66,5 +67,5 @@ describe("Inventory - Extras", () => {
     checkItemInTheCart(item3);
     checkItemInTheCart(item4);
   });
-  
+
 });

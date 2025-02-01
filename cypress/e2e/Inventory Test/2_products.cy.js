@@ -38,12 +38,12 @@ describe('Inventory - Products', () => {
   
     cy.get('select').select('lohi');
     
-    getPricesFromElements('.inventory_item_price')
-    .then((prices) =>{
+    getPricesFromElements('.inventory_item_price').then((prices) =>{
       // Verify if the prices are in ascending order
       for (let i = 0; i < prices.length - 1; i++) {
         expect(prices[i]).to.be.lte(prices[i + 1]); 
       }
     })
   });
+  
 });
